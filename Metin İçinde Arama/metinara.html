@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metin Ara</title>
+</head>
+<body>
+
+    <p id="paragraf">JavaScript [10] (genellikle JS olarak kısaltılır), 
+    HTML ve CSS ile birlikte World Wide Web'in temel
+    teknolojilerinden biri olan programlama dilidir.
+    Web sitelerinin %97'sinden fazlası, web sayfası hareketleri için istemci tarafında JavaScript kullanırlar [12] ve kullanılan kodlar genellikle üçüncü taraf kitaplıkları içerir. [13] Tüm büyük web tarayıcılarında, kaynak kodunu kullanıcıların cihazlarında
+    yürütebilmek için özel bir JavaScript motoru bulunur. kaynak Wikipedia</p>
+    
+    <button onclick="Ara()">Arama</button>
+    <div id="yazdır"></div>
+
+    <input type="text" valeu="kullanıcıdegeryaz">
+
+    <script>
+        function Ara(){
+            var str = document.getElementById("paragraf").innerHTML;
+            var konum = str.search("World");
+            document.getElementById("yazdır").innerHTML = konum;
+        }
+    </script>
+</body>
+</html>
