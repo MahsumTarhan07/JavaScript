@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseOver vs  onMouseOut </title>
+    <style>
+        .div{
+            width: 300px;
+            height: 400px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--1. MouseOver = mouse işaretçisi(imleç) üzerindeyken , onMouseOut = mouse işaretçisi üzerinden ayrıldığında.
+-->
+    <script>
+        function girisYapildi(){
+            document.getElementById("divyazi").innerHTML = "Div Alanınan Girildi";
+        }
+
+        function cikildi(){
+            document.getElementById("divyazi").innerHTML = "Div Alanınan Cikildi";
+        }
+    </script>
+
+    <div class="div" onmouseover=girisYapildi() onmouseout=cikildi()>
+
+    </div>
+
+    <div id="divyazi"></div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onSubmit Method</title>
+
+    <script>
+        function girisyapılsınmı() {
+            gelendeger = document.forms[0].ad.value;
+            alert("Merhaba " + gelendeger + " Hoşgeldiniz");
+        }
+    </script>
+
+</head>
+
+  <body>
+  
+  <form onsubmit="girisyapılsınmı()" action="#">
+    Kullanıcı Adınız : <input id="ad" type="text" size="20"> <br>
+    Şifre  : <input type="password" name="sifre" id=""> <br>
+    <input type="submit" value="Gonder">
+  </form>
+  
+  </body>
+</html>
