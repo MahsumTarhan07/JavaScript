@@ -1,0 +1,84 @@
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Json Veri Cekme </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+ 
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col mt-2 mb-4">
+                <button class="btn btn-primary p-3" id="veri-oku"><i class="fa-solid fa-users"></i></button>
+            </div>
+            <div class="col-1">
+                <button class="btn btn-dark p-3" onclick="verileriGizle()"><i class="fa-solid fa-users-slash"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#ID</th>
+                      <th>Name</th>
+                      <th>Lastname</th>
+                    </tr>
+                  </thead>
+                  <tbody id="liste">
+                    <tr>
+                      <th scope="row">ID</th>
+                      <td>*****</td>
+                      <td>*****</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>   
+       const btnCek=document.querySelector("#veri-oku");
+       const tbListe=document.querySelector("#liste");
+
+      
+        btnCek.addEventListener("click",function(){
+            fetch('./json01.json') 
+                .then(cevap => cevap.json()) 
+                .then(veri => {
+                
+                    tbListe.innerHTML="";//tabloyu boşalt
+                
+                    veri.forEach(function(element,index){
+                        const satir = document.createElement("tr");
+                        const hucre1 = document.createElement("td");
+                        const hucre2 = document.createElement("td");
+                        const hucre3 = document.createElement("td");
+                        
+                        hucre1.textContent=element.id
+                        hucre2.textContent=element.ad
+                        hucre3.textContent=element.soyad
+                        
+                        satir.appendChild(hucre1)
+                        satir.appendChild(hucre2)
+                        satir.appendChild(hucre3)
+                        
+                        tbListe.appendChild(satir)
+                    });
+                    
+                });
+        });
+
+        function verileriGizle(){
+            tbListe.innerHTML = ""
+        }
+        
+    </script>
+    
+</body>
+</html>
