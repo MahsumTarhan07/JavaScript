@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: o;
+    box-sizing: border-box;
+
+}
+
+#speak-bot{
+    display: block;
+    margin: 60px auto;
+    width: 600px;
+    text-align: center;
+
+    #input{
+        width: 95.9%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border-radius: 2px;
+    }
+    #output{
+        width: 96%;
+        height: 200px;
+        border: 1px solid black;
+        padding: 10px;
+        overflow-y: scroll;
+        border-radius: 2px;
+        margin-top: 5px;
+
+        .h2{
+            position: fixed;
+            text-align: center;
+            font-size: 22px;
+            color: black;
+            margin-top: 5px;
+            font-style: italic;
+            opacity: 0.3;
+        
+        }
+    }
+}
